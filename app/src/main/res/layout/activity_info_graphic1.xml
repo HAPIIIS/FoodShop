@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoGraphic1">
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Skip"
+        android:textSize="9pt"
+        android:textColor="@color/text_color"
+        tools:ignore="InvalidId"></TextView>
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Your Food"
+            android:textSize="13pt"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/text_color"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/subtitle"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Now you can order your food by simply using your phone."
+            android:textSize="7pt"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/text_color"/>
+
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@drawable/info1">
+        </ImageView>
+        <LinearLayout
+            android:layout_marginTop="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle"
+                android:layout_marginEnd="4dp">
+            </ImageView>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle_notactive"
+                android:layout_marginEnd="4dp">
+            </ImageView>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circle_notactive"
+                android:id="@+id/lastDots">
+            </ImageView>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_next"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/palet1"
+                android:src="@drawable/right_arrow"
+                app:fabCustomSize="68dp"
+                app:maxImageSize="30dp"
+                app:tint="@color/palet5"
+                android:layout_marginStart="210dp">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
