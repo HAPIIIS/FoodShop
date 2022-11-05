@@ -15,7 +15,7 @@
         android:textColor="@color/text_color"
         android:layout_gravity="center"
         android:textSize="18pt"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="90dp"/>
 
     <TextView
         android:layout_width="300dp"
@@ -66,7 +66,7 @@
         android:fontFamily="@font/montserrat_bold"/>
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -106,7 +106,8 @@
             android:src="@drawable/google"
             app:fabCustomSize="68dp"
             app:maxImageSize="40dp"
-            app:tint="#db3236">
+            app:tint="#db3236"
+            android:layout_marginBottom="10dp">
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/facebook"
@@ -119,7 +120,8 @@
             android:src="@drawable/facebook"
             app:fabCustomSize="68dp"
             app:maxImageSize="40dp"
-            app:tint="#4267B2">
+            app:tint="#4267B2"
+            android:layout_marginBottom="10dp">
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/twitter"
@@ -129,9 +131,35 @@
             android:src="@drawable/twitter"
             app:fabCustomSize="68dp"
             app:maxImageSize="40dp"
-            app:tint="#00acee">
+            app:tint="#00acee"
+            android:layout_marginBottom="10dp">
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="35dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not a Member?"
+            android:textSize="10pt"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/register_intent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Now"
+            android:textSize="10pt"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_gravity="center"
+            android:textColor="@color/palet1"
+            tools:ignore="InvalidId"
+            android:layout_marginStart="5dp"/>
     </LinearLayout>
 
 

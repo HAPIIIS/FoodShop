@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class InfoGraphic2 extends AppCompatActivity {
     private FloatingActionButton next;
+    private TextView skip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +20,13 @@ public class InfoGraphic2 extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
-
+        skip = findViewById(R.id.skip);
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InfoGraphic2.this, MainActivity.class));
+            }
+        });
         next = findViewById(R.id.fab_next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
