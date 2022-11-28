@@ -28,6 +28,7 @@
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:hint="enter your username"
@@ -39,8 +40,22 @@
         android:background="@drawable/form_style"
         android:drawablePadding="10dp"
         android:paddingLeft="10dp"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="enter your email"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="text"
+        android:background="@drawable/form_style"
+        android:drawablePadding="10dp"
+        android:paddingLeft="10dp"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:hint="enter your password"
@@ -54,9 +69,10 @@
         android:paddingLeft="10dp"/>
 
     <EditText
+        android:id="@+id/passwordConf"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="enter your email"
+        android:hint="please re-enter password"
         android:inputType="textPassword"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"

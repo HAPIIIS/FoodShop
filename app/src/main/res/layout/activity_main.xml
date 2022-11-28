@@ -27,9 +27,10 @@
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="enter your username"
+        android:hint="enter your email"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="50dp"
@@ -40,6 +41,7 @@
         android:paddingLeft="10dp"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:hint="enter your password"
