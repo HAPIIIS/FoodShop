@@ -4,123 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    tools:context=".RegisterActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Hello!"
         android:textColor="@color/text_color"
-        android:layout_gravity="center"
-        android:textSize="18pt"
-        android:layout_marginTop="90dp"/>
+        android:textSize="18pt" />
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Let's get started."
         android:layout_gravity="center"
-        android:textSize="10pt"
         android:fontFamily="@font/montserrat_regular"
-        android:textAlignment="center"/>
+        android:text="Let's get started."
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="10pt" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="enter your username"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="50dp"
-        android:fontFamily="@font/montserrat_regular"
-        android:inputType="text"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/form_style"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"/>
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="enter your username"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_color" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="enter your email"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/montserrat_regular"
-        android:inputType="text"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/form_style"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"/>
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="enter your email"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_color" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="enter your password"
-        android:inputType="textPassword"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/form_style"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"/>
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="enter your password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_color" />
 
     <EditText
         android:id="@+id/passwordConf"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="please re-enter password"
-        android:inputType="textPassword"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/form_style"
         android:drawablePadding="10dp"
-        android:paddingLeft="10dp"/>
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="please re-enter password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_color" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/regisBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#F9172B"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#F9172B"
+        android:fontFamily="@font/montserrat_bold"
         android:text="Register"
         android:textColor="@color/white"
-        android:textSize="8pt"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/montserrat_bold"/>
+        android:textSize="8pt" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="150dp">
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
-            android:textSize="10pt"
+            android:layout_gravity="center"
             android:fontFamily="@font/montserrat_regular"
-            android:layout_gravity="center"/>
+            android:text="Already have an account?"
+            android:textColor="@color/text_color"
+            android:textSize="10pt" />
+
         <TextView
             android:id="@+id/login_intent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="10pt"
-            android:fontFamily="@font/montserrat_bold"
             android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Login"
             android:textColor="@color/white"
-            tools:ignore="InvalidId"
-            android:layout_marginStart="5dp"/>
+            android:textSize="10pt"
+            tools:ignore="InvalidId" />
     </LinearLayout>
 
 </LinearLayout>

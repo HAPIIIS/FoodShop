@@ -19,6 +19,23 @@
         <entry key="..\:/Android Studio Code/ProjectMobile/app/src/main/res/layout/activity_profile.xml" value="0.16822916666666668" />
         <entry key="..\:/Android Studio Code/ProjectMobile/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Android Studio Code/ProjectMobile/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1355" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/circle.xml" value="0.17" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/circle_notactive.xml" value="0.17" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/form_style.xml" value="0.17" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/gradient_background.xml" value="0.17" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1355" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/drawable/rounded_button.xml" value="0.17" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_ayambakar.xml" value="0.16979166666666667" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_bayar.xml" value="0.21510416666666668" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_cart.xml" value="0.21510416666666668" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_main.xml" value="0.18461539003270633" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_nasipadang.xml" value="0.18461539003270633" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_pilih_warung.xml" value="0.18461539003270633" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_register.xml" value="0.18461539003270633" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_seblak.xml" value="0.15507692762747333" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/activity_splash_screen.xml" value="0.21510416666666668" />
+        <entry key="..\:/android studio sdk/FoodShop/app/src/main/res/layout/rowpesanan.xml" value="0.15625" />
       </map>
     </option>
   </component>

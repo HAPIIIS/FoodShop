@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void googlesignIn(){
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, 1001);
+        startActivityForResult(signInIntent, 100);
     }
     private void login(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1001){
+        if (requestCode == 100){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try{
                 GoogleSignInAccount account = task.getResult(ApiException.class);

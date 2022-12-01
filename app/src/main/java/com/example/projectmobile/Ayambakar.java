@@ -26,14 +26,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class PilihWarungActivity extends AppCompatActivity {
+public class Ayambakar extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private TextView name, namamakanan,harga ;
-    private ImageView logout, keranjang;
-    private CardView seblak, nasipadang, ayambakar;
+    private ImageView logout;
+    private CardView seblak, nasipadang, ayambakar,nasiuduk;
     private EditText input;
     private Button cart;
-    private int total,inputjml , harga2;
+    private int inputjml,harga2,total;
     private String totalharga;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -42,7 +42,7 @@ public class PilihWarungActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pilih_warung);
+        setContentView(R.layout.activity_ayambakar);
 
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
@@ -51,7 +51,7 @@ public class PilihWarungActivity extends AppCompatActivity {
         name = findViewById(R.id.nama);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         logout = findViewById(R.id.logout);
-keranjang = findViewById(R.id.keranjang);
+
         if (firebaseUser!=null){
             name.setText(firebaseUser.getDisplayName());
         }else{
@@ -62,7 +62,7 @@ keranjang = findViewById(R.id.keranjang);
         nasipadang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pindah = new Intent(PilihWarungActivity.this, Nasipadang.class);
+                Intent pindah = new Intent(Ayambakar.this, Nasipadang.class);
                 startActivity(pindah);
             }
         });
@@ -71,7 +71,7 @@ keranjang = findViewById(R.id.keranjang);
         seblak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pindah = new Intent(PilihWarungActivity.this, seblak.class);
+                Intent pindah = new Intent(Ayambakar.this, seblak.class);
                 startActivity(pindah);
             }
         });
@@ -80,15 +80,18 @@ keranjang = findViewById(R.id.keranjang);
         ayambakar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pindah = new Intent(PilihWarungActivity.this, Ayambakar.class);
+                Intent pindah = new Intent(Ayambakar.this, Ayambakar.class);
                 startActivity(pindah);
             }
         });
 
-        keranjang.setOnClickListener(v ->{
-
-            startActivity(new Intent(getApplicationContext(), cart.class));
-            finish();
+        nasiuduk = findViewById(R.id.card1);
+        nasiuduk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pindah = new Intent(Ayambakar.this, PilihWarungActivity.class);
+                startActivity(pindah);
+            }
         });
 
         logout.setOnClickListener(v ->{
@@ -101,7 +104,6 @@ keranjang = findViewById(R.id.keranjang);
         namamakanan = findViewById(R.id.namamakanan);
         input = findViewById(R.id.inputjumlah);
         cart = (Button) findViewById(R.id.btnCart);
-
 
         cart.setOnClickListener(v -> {
             if (input.getText().length() > 0 && namamakanan.getText().length()>0
@@ -121,7 +123,7 @@ keranjang = findViewById(R.id.keranjang);
 
         });
     }
-    private void saveData (String input, String namamakanan, String harga, String name, String totalharga){
+    private void saveData ( String input, String namamakanan, String harga, String name, String totalharga){
         Map<String, Object> user = new HashMap<>();
         user.put("input", input);
         user.put("makanan",namamakanan);
@@ -129,23 +131,24 @@ keranjang = findViewById(R.id.keranjang);
         user.put("user", name);
         user.put("total",totalharga);
 
+
         db.collection("pesanan")
-                    .add(user)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(getApplicationContext(), "Berhasil!", Toast.LENGTH_SHORT).show();
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(getApplicationContext(), "Berhasil!", Toast.LENGTH_SHORT).show();
 
-                            finish();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
-                    });
+                    }
+                });
 
 
 
