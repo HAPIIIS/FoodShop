@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,7 @@ public class PilihWarungActivity extends AppCompatActivity {
     private Button cart;
     private int total,inputjml , harga2, inputan;
     private String totalharga;
+    private ProgressDialog progressDialog;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -91,8 +93,10 @@ public class PilihWarungActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), cart.class));
             finish();
         });
-
+        progressDialog = new ProgressDialog(PilihWarungActivity.this);
+        progressDialog.setTitle("Logout...");
         logout.setOnClickListener(v ->{
+            progressDialog.show();
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
@@ -123,16 +127,19 @@ public class PilihWarungActivity extends AppCompatActivity {
         });
 
         cart.setOnClickListener(v -> {
-            if (input.getText().length() > 0 && namamakanan.getText().length()>0
+            if (input.getText().length() != '0' && namamakanan.getText().length()>0
                     && harga.getText().length()>0 && name.getText().length()>0 ) {
                 inputjml= Integer.parseInt(input.getText().toString());
                 harga2 = Integer.parseInt(harga.getText().toString());
+                if (inputjml > 0){
                 total = inputjml * harga2;
                 totalharga = String.valueOf(total);
                 saveData(input.getText().toString(), namamakanan.getText().toString(),
                         harga.getText().toString(), name.getText().toString(), totalharga);
                 startActivity(new Intent(getApplicationContext(),cart.class));
-                finish();
+                finish();}else{
+                    Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
 

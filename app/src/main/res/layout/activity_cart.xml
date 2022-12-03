@@ -70,7 +70,7 @@
         android:layout_gravity="center"
         android:background="@color/palet1"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="60dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"

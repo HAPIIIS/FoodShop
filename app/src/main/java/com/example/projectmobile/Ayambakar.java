@@ -130,12 +130,15 @@ public class Ayambakar extends AppCompatActivity {
                     && harga.getText().length()>0 && name.getText().length()>0 ) {
                 inputjml= Integer.parseInt(input.getText().toString());
                 harga2 = Integer.parseInt(harga.getText().toString());
-                total = inputjml * harga2;
-                totalharga = String.valueOf(total);
-                saveData(input.getText().toString(), namamakanan.getText().toString(),
-                        harga.getText().toString(), name.getText().toString(), totalharga);
-                startActivity(new Intent(getApplicationContext(),cart.class));
-                finish();
+                if (inputjml > 0){
+                    total = inputjml * harga2;
+                    totalharga = String.valueOf(total);
+                    saveData(input.getText().toString(), namamakanan.getText().toString(),
+                            harga.getText().toString(), name.getText().toString(), totalharga);
+                    startActivity(new Intent(getApplicationContext(),cart.class));
+                    finish();}else{
+                    Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
 
