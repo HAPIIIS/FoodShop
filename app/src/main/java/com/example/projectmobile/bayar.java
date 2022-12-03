@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,6 +39,7 @@ public class bayar extends AppCompatActivity {
         selesai.setOnClickListener(v ->{
 
             startActivity(new Intent(getApplicationContext(), PilihWarungActivity.class));
+            Toast.makeText(getApplicationContext(), "Pesanan Segera Diproses", Toast.LENGTH_SHORT).show();
             finish();
         });
 

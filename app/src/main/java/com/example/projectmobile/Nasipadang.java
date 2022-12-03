@@ -29,11 +29,11 @@ import java.util.Map;
 public class Nasipadang extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private TextView name, namamakanan,harga ;
-    private ImageView logout;
+    private ImageView logout,minus,tambah;
     private CardView seblak, nasipadang, ayambakar,nasiuduk;
-    private EditText input;
+    private TextView input;
     private Button cart;
-    private int inputjml,total,harga2;
+    private int inputjml,total,harga2,inputan;
     private String totalharga;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -104,6 +104,27 @@ public class Nasipadang extends AppCompatActivity {
         namamakanan = findViewById(R.id.namamakanan);
         input = findViewById(R.id.inputjumlah);
         cart = (Button) findViewById(R.id.btnCart);
+
+        minus = findViewById(R.id.minus);
+        tambah = findViewById(R.id.tambah);
+        inputan = 0;
+        input.setText(String.valueOf(inputan));
+
+
+        tambah.setOnClickListener( v  -> {
+            inputan += 1;
+            input.setText(String.valueOf(inputan));
+        });
+
+        minus.setOnClickListener( v -> {
+            if ( inputan > 0) {
+                inputan -= 1;
+                input.setText(String.valueOf(inputan));
+            }else {
+                input.setText(String.valueOf(inputan));
+            }
+        });
+
 
         cart.setOnClickListener(v -> {
             if (input.getText().length() > 0 && namamakanan.getText().length()>0

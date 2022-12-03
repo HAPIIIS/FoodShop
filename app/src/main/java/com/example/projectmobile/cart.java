@@ -61,7 +61,7 @@ public class cart extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         logout = findViewById(R.id.logout);
         kembali = findViewById(R.id.kembali);
-        btnHapus = (ImageView) findViewById(R.id.btnHapus);
+
         checkout = findViewById(R.id.btnCheckout);
 
         if (firebaseUser!=null){
