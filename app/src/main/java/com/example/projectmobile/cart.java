@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class cart extends AppCompatActivity {
     private TextView name;
     private FirebaseUser firebaseUser;
     private Button checkout;
-
+    private ProgressDialog progressDialog;
 
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -61,9 +62,10 @@ public class cart extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         logout = findViewById(R.id.logout);
         kembali = findViewById(R.id.kembali);
-        btnHapus = (ImageView) findViewById(R.id.btnHapus);
-        checkout = findViewById(R.id.btnCheckout);
 
+        checkout = findViewById(R.id.btnCheckout);
+        progressDialog = new ProgressDialog(cart.this);
+        progressDialog.setTitle("Loading");
         if (firebaseUser!=null){
             name.setText(firebaseUser.getDisplayName());
         }else{
@@ -129,6 +131,7 @@ public class cart extends AppCompatActivity {
         }
 
     private void getData(){
+        progressDialog.show();
         db.collection("pesanan")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -145,6 +148,7 @@ public class cart extends AppCompatActivity {
 
                             }
                             pesananadapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
                         } else {
                             Toast.makeText(getApplicationContext(), "Data gagal diambil", Toast.LENGTH_SHORT).show();
                         }

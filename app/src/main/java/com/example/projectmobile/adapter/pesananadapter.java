@@ -84,7 +84,7 @@ public class pesananadapter extends RecyclerView.Adapter<pesananadapter.MyViewHo
             jumlah = itemView.findViewById(R.id.jumlah);
             harga = itemView.findViewById(R.id.harga);
             totalharga = itemView.findViewById(R.id.total);
-            btnHapus = itemView.findViewById(R.id.btnHapus);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

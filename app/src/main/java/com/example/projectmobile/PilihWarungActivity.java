@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,13 @@ import java.util.Map;
 public class PilihWarungActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private TextView name, namamakanan,harga ;
-    private ImageView logout, keranjang;
+    private ImageView logout, keranjang, minus, tambah;
     private CardView seblak, nasipadang, ayambakar;
-    private EditText input;
+    private TextView input;
     private Button cart;
-    private int total,inputjml , harga2;
+    private int total,inputjml , harga2, inputan;
     private String totalharga;
+    private ProgressDialog progressDialog;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -51,7 +53,8 @@ public class PilihWarungActivity extends AppCompatActivity {
         name = findViewById(R.id.nama);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         logout = findViewById(R.id.logout);
-keranjang = findViewById(R.id.keranjang);
+        keranjang = findViewById(R.id.keranjang);
+
         if (firebaseUser!=null){
             name.setText(firebaseUser.getDisplayName());
         }else{
@@ -90,8 +93,10 @@ keranjang = findViewById(R.id.keranjang);
             startActivity(new Intent(getApplicationContext(), cart.class));
             finish();
         });
-
+        progressDialog = new ProgressDialog(PilihWarungActivity.this);
+        progressDialog.setTitle("Logout...");
         logout.setOnClickListener(v ->{
+            progressDialog.show();
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
@@ -101,19 +106,40 @@ keranjang = findViewById(R.id.keranjang);
         namamakanan = findViewById(R.id.namamakanan);
         input = findViewById(R.id.inputjumlah);
         cart = (Button) findViewById(R.id.btnCart);
+        minus = findViewById(R.id.minus);
+        tambah = findViewById(R.id.tambah);
+        inputan = 0;
+        input.setText(String.valueOf(inputan));
 
+
+        tambah.setOnClickListener( v  -> {
+            inputan += 1;
+            input.setText(String.valueOf(inputan));
+        });
+
+        minus.setOnClickListener( v -> {
+            if ( inputan > 0) {
+                inputan -= 1;
+                input.setText(String.valueOf(inputan));
+            }else {
+                input.setText(String.valueOf(inputan));
+            }
+        });
 
         cart.setOnClickListener(v -> {
-            if (input.getText().length() > 0 && namamakanan.getText().length()>0
+            if (input.getText().length() != '0' && namamakanan.getText().length()>0
                     && harga.getText().length()>0 && name.getText().length()>0 ) {
                 inputjml= Integer.parseInt(input.getText().toString());
                 harga2 = Integer.parseInt(harga.getText().toString());
+                if (inputjml > 0){
                 total = inputjml * harga2;
                 totalharga = String.valueOf(total);
                 saveData(input.getText().toString(), namamakanan.getText().toString(),
                         harga.getText().toString(), name.getText().toString(), totalharga);
                 startActivity(new Intent(getApplicationContext(),cart.class));
-                finish();
+                finish();}else{
+                    Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(getApplicationContext(), "Silahkan isi jumlah", Toast.LENGTH_SHORT).show();
 

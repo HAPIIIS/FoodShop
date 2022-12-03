@@ -2,11 +2,13 @@ package com.example.projectmobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,6 +18,7 @@ public class bayar extends AppCompatActivity {
     private TextView name;
     private ImageView kembali, logout;
     private Button selesai;
+    private ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +37,12 @@ public class bayar extends AppCompatActivity {
             name.setText("Login Gagal!");
         }
 
-
+        progressDialog = new ProgressDialog(bayar.this);
+        progressDialog.setTitle("Loading");
         selesai.setOnClickListener(v ->{
-
+            progressDialog.show();
             startActivity(new Intent(getApplicationContext(), PilihWarungActivity.class));
+            Toast.makeText(getApplicationContext(), "Pesanan Segera Diproses", Toast.LENGTH_SHORT).show();
             finish();
         });
 

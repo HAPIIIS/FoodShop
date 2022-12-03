@@ -70,12 +70,12 @@
         android:layout_gravity="center"
         android:background="@color/palet1"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="60dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="wrap_content"
-            android:layout_height="292dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginTop="0dp" />
     </androidx.cardview.widget.CardView>

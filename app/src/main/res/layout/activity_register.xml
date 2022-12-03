@@ -127,7 +127,7 @@
             android:layout_marginStart="5dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Login"
-            android:textColor="@color/white"
+            android:textColor="@color/palet1"
             android:textSize="10pt"
             tools:ignore="InvalidId" />
     </LinearLayout>

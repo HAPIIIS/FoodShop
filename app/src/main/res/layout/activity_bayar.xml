@@ -70,7 +70,7 @@
         android:layout_gravity="center"
         android:background="@color/palet1"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/title"
@@ -83,13 +83,15 @@
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/text_color" />
 
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="230dp"
         android:layout_height="230dp"
         android:layout_gravity="center"
         android:background="@color/palet1"
         app:cardCornerRadius="20dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="30dp">
 
         <ImageView
             android:id="@+id/qr"
@@ -121,7 +123,7 @@
             android:background="@drawable/rounded_button"
 
 
-            android:paddingRight="10dp"
+            android:padding="5dp"
             />
 
 

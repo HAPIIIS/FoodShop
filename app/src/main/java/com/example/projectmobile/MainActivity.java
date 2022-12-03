@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful() && task.getResult() != null) {
                     if(task.getResult().getUser()!=null){
+                        progressDialog.show();
                         reload();
                     }else{
                         Toast.makeText(getApplicationContext(),"Login Gagal", Toast.LENGTH_SHORT).show();
